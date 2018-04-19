@@ -1,0 +1,1 @@
+[{"input":["laowang","123456"],"memthod":"selectByUsernameAndPassword","output":"{\"password\":\"123456\",\"username\":\"qianjun\"}"}]
