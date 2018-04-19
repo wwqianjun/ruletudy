@@ -2,7 +2,6 @@ package com.qianjun.rules;
 
 import com.qianjun.rules.bean.ActivityBean;
 import com.qianjun.rules.bean.PrizeBean;
-import com.qianjun.rules.core.Rule;
 import com.qianjun.rules.core.impl.RulesEngineBuilder;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -10,7 +9,8 @@ import net.sf.json.JSONObject;
 import javax.script.ScriptException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.*;
+import java.util.Iterator;
+import java.util.Properties;
 
 /**
  * Hello world!
@@ -49,7 +49,7 @@ public class App
         ActivityBean activityBean = new ActivityBean();
         net.sf.json.JSONObject firstLogin = new net.sf.json.JSONObject();
         firstLogin.put("isFirstLogin","1");
-        //规则引擎执行规则
+        //规则引擎执行规则. 改变奖品的状态
         RulesEngineBuilder.aNewRulesEngine().handlerPrizesRule(prizeItemRuleArray, prizeBean, activityBean, firstLogin)
                 .build().executeRules();
 
